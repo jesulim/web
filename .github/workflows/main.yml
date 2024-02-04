@@ -2,7 +2,7 @@ name: Frontend Performance Analysis
 
 on:
   schedule:
-    - cron: '31 10 * * *' 
+    - cron: '32 10 * * *' 
 
 jobs:
   analyze_frontend_performance:

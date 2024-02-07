@@ -1,0 +1,24 @@
+name: Frontend Performance Analysis
+
+on:
+  schedule:
+    - cron: '40 10 * * *' 
+
+jobs:
+  analyze_frontend_performance:
+    runs-on: ubuntu-18.04
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install Lighthouse
+        run: npm install -g lighthouse
+
+      - name: Run Lighthouse
+        run: lighthouse https://web-tau-opal.vercel.app/ --output json --output html --output-path report_$(date +'%Y-%m-%d').html --chrome-flags="--headless"

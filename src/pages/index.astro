@@ -4,10 +4,12 @@ import { siteConfig } from "@/config/site";
 import MainLayout from "@/layouts/main-layout.astro";
 import { cn } from "@/lib/utils";
 import Icon from "astro-icon";
+import GifComponent from "../components/ui/nyancat";
 ---
 
 <MainLayout title="Astronomy">
   <section class="space-y-6 pb-12 pt-16 lg:py-28">
+    <GifComponent client:visible/>
     <div
       class="container flex max-w-[64rem] flex-col items-center gap-5 text-center"
     >
